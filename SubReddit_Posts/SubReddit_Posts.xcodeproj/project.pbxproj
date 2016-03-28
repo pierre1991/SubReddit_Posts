@@ -16,6 +16,7 @@
 		8F012FD01CA981A900B48BCE /* ListTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F012FCF1CA981A900B48BCE /* ListTableViewController.swift */; };
 		8F012FD61CA9852000B48BCE /* NetworkController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F012FD51CA9852000B48BCE /* NetworkController.swift */; };
 		8F012FD81CA9861300B48BCE /* Subreddit.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F012FD71CA9861300B48BCE /* Subreddit.swift */; };
+		8F012FDA1CA98E5200B48BCE /* SubredditController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8F012FD91CA98E5200B48BCE /* SubredditController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -51,6 +52,7 @@
 		8F012FCF1CA981A900B48BCE /* ListTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListTableViewController.swift; sourceTree = "<group>"; };
 		8F012FD51CA9852000B48BCE /* NetworkController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NetworkController.swift; sourceTree = "<group>"; };
 		8F012FD71CA9861300B48BCE /* Subreddit.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Subreddit.swift; sourceTree = "<group>"; };
+		8F012FD91CA98E5200B48BCE /* SubredditController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SubredditController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,9 +108,9 @@
 				8F012FA81CA97F9D00B48BCE /* Assets.xcassets */,
 				8F012FAA1CA97F9D00B48BCE /* LaunchScreen.storyboard */,
 				8F012FAD1CA97F9D00B48BCE /* Info.plist */,
-				8F012FD31CA981C100B48BCE /* ViewController */,
-				8F012FD21CA981BB00B48BCE /* Controller */,
 				8F012FD11CA981B600B48BCE /* Model */,
+				8F012FD21CA981BB00B48BCE /* Controller */,
+				8F012FD31CA981C100B48BCE /* ViewController */,
 			);
 			path = SubReddit_Posts;
 			sourceTree = "<group>";
@@ -143,6 +145,7 @@
 			isa = PBXGroup;
 			children = (
 				8F012FD51CA9852000B48BCE /* NetworkController.swift */,
+				8F012FD91CA98E5200B48BCE /* SubredditController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8F012FD81CA9861300B48BCE /* Subreddit.swift in Sources */,
+				8F012FDA1CA98E5200B48BCE /* SubredditController.swift in Sources */,
 				8F012FA21CA97F9D00B48BCE /* AppDelegate.swift in Sources */,
 				8F012FD01CA981A900B48BCE /* ListTableViewController.swift in Sources */,
 				8F012FD61CA9852000B48BCE /* NetworkController.swift in Sources */,

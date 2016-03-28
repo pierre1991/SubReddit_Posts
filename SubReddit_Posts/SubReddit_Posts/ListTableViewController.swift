@@ -8,12 +8,24 @@
 
 import UIKit
 
-class ListTableViewController: UIViewController {
+class ListTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    //MARK: Properties
+    var titleArray: [Subreddit] = []
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
     }
 
+    func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return titleArray.count
+        
+    }
+    
+    func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
+        <#code#>
+    }
 
     
     

@@ -13,6 +13,11 @@ class NetworkController {
     static let baseURL = "https://www.reddit.com/subreddits/search"
     
     
+    static func searchByTopic(topic: String) -> NSURL {
+        return NSURL(string: "https://www.reddit.com/r\(topic).json")!
+        
+    }
+    
     static func dataAtURL(url: NSURL, completion:(data: NSData?) -> Void) {
         let session = NSURLSession.sharedSession()
         
