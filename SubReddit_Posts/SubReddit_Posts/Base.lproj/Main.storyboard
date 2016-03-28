@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9530"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -16,7 +17,56 @@
                     <view key="view" contentMode="scaleToFill" id="r8S-9f-WSf">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CZk-nn-iku">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="550"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="titleCell" id="7nJ-aT-zQ0">
+                                        <rect key="frame" x="0.0" y="92" width="600" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7nJ-aT-zQ0" id="eGx-Gs-jdk">
+                                            <rect key="frame" x="0.0" y="0.0" width="600" height="43"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="iIn-Li-tSI" id="gy7-dD-R6B"/>
+                                    <outlet property="delegate" destination="iIn-Li-tSI" id="wV4-1L-9Qt"/>
+                                </connections>
+                            </tableView>
+                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggj-2r-FhH">
+                                <rect key="frame" x="0.0" y="550" width="600" height="50"/>
+                                <subviews>
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u0d-GF-qKy">
+                                        <rect key="frame" x="0.0" y="0.0" width="553" height="50"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eUW-Lb-siI">
+                                        <rect key="frame" x="553" y="0.0" width="47" height="50"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="47" id="Dil-VG-fJI"/>
+                                        </constraints>
+                                        <state key="normal" title="search"/>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="Mc6-7R-eVn"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="dlT-EJ-QEx" firstAttribute="top" secondItem="ggj-2r-FhH" secondAttribute="bottom" id="Euj-q0-w7z"/>
+                            <constraint firstItem="CZk-nn-iku" firstAttribute="leading" secondItem="ggj-2r-FhH" secondAttribute="leading" id="btF-34-734"/>
+                            <constraint firstItem="CZk-nn-iku" firstAttribute="trailing" secondItem="ggj-2r-FhH" secondAttribute="trailing" id="fBA-6m-Ztb"/>
+                            <constraint firstItem="CZk-nn-iku" firstAttribute="top" secondItem="r8S-9f-WSf" secondAttribute="top" id="pNY-lG-g6v"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="ggj-2r-FhH" secondAttribute="trailing" constant="-20" id="sKl-0X-jVY"/>
+                            <constraint firstItem="ggj-2r-FhH" firstAttribute="leading" secondItem="r8S-9f-WSf" secondAttribute="leadingMargin" constant="-20" id="uu8-4m-jwS"/>
+                            <constraint firstItem="ggj-2r-FhH" firstAttribute="top" secondItem="CZk-nn-iku" secondAttribute="bottom" id="yMU-By-3xc"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UgE-cg-LIW"/>
                 </viewController>
