@@ -30,6 +30,6 @@ class NetworkController {
             completion(data: data)
             }
         dataTask.resume()
-        }
+    }
 }
 

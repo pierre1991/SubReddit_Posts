@@ -6,10 +6,10 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--List Table View Controller-->
         <scene sceneID="J3g-yJ-CSL">
             <objects>
-                <viewController id="iIn-Li-tSI" sceneMemberID="viewController">
+                <viewController id="iIn-Li-tSI" customClass="ListTableViewController" customModule="SubReddit_Posts" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="vL5-fK-g0f"/>
                         <viewControllerLayoutGuide type="bottom" id="dlT-EJ-QEx"/>
@@ -22,7 +22,7 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="550"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="titleCell" rowHeight="56" id="7nJ-aT-zQ0">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="topicCell" rowHeight="56" id="7nJ-aT-zQ0">
                                         <rect key="frame" x="0.0" y="92" width="600" height="56"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7nJ-aT-zQ0" id="eGx-Gs-jdk">
@@ -39,7 +39,7 @@
                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ggj-2r-FhH">
                                 <rect key="frame" x="0.0" y="550" width="600" height="50"/>
                                 <subviews>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u0d-GF-qKy">
+                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="search by topic..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="u0d-GF-qKy">
                                         <rect key="frame" x="0.0" y="0.0" width="553" height="50"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
@@ -50,6 +50,9 @@
                                             <constraint firstAttribute="width" constant="47" id="Dil-VG-fJI"/>
                                         </constraints>
                                         <state key="normal" title="search"/>
+                                        <connections>
+                                            <action selector="searchButtonTapped:" destination="iIn-Li-tSI" eventType="touchUpInside" id="vXY-RH-8Kl"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -69,6 +72,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="UgE-cg-LIW"/>
+                    <connections>
+                        <outlet property="searchTextField" destination="u0d-GF-qKy" id="3CJ-VZ-2Vl"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="GHc-8m-esa" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

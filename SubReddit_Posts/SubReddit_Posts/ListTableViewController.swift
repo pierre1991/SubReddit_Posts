@@ -10,34 +10,55 @@ import UIKit
 
 class ListTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate {
 
+    
     //MARK: Properties
-    var titleArray: [Subreddit] = []
+    var redditTopicArray: [Subreddit] = []
+    @IBOutlet weak var searchTextField: UITextField!
     
     
+    //MARK: App Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
     }
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
 
+    }
+    
+    
+    //MARK: Actions
+    @IBAction func searchButtonTapped(sender: AnyObject) {
+        if let searchText = searchTextField.text {
+            SubredditController.searchPosts(searchText, completion: { (topics) -> Void in
+                if topics.count > 0 {
+                    self.redditTopicArray = topics
+                } else {
+                    print("Error")
+                }
+            })
+        }
+    }
+
+
+    //MARK: Table View Delegate & DataSource
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return titleArray.count
-        
+        return redditTopicArray.count
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        <#code#>
+        let cell = tableView.dequeueReusableCellWithIdentifier("topicCell", forIndexPath: indexPath)
+        
+        let topic = redditTopicArray[indexPath.row]
+        
+        if let topicName = topic.title {
+            cell.textLabel?.text = topicName
+        }
+        
+        return cell
     }
 
     
-    
 
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }
